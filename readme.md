@@ -1,4 +1,4 @@
-# Tic-Tac-Toe Online
+# Tic-Tac-Toe Online [![Build Status](https://travis-ci.org/VFK/tic-tac-toe-online.png?branch=master)](https://travis-ci.org/VFK/tic-tac-toe-online)
 
 Open source massive multiplayer online tic-tac-toe game. Play it at http://ttt.vfk.me
 
