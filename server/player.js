@@ -14,7 +14,12 @@ util.inherits(Player, EventEmitter);
 
 Player.prototype.setListeners = function () {
     this.connection.on('message', function (message) {
-        var json = JSON.parse(message);
+        try {
+            var json = JSON.parse(message);
+        } catch (e) {
+            this.connection.close();
+            return;
+        }
 
         switch (json.type) {
             case 'restart':
