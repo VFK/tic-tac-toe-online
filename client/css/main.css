@@ -1,0 +1,152 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    background-color: #F0F0F0;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 735px;
+}
+
+.main {
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+    border-radius: 0 0 4px 4px;
+    border-top: 0;
+    border-right: 1px solid #b3b3b3;
+    border-left: 1px solid #b3b3b3;
+    border-bottom: 1px solid #b3b3b3;
+    padding-left: 20px;
+}
+
+.box {
+    padding: 10px;
+}
+
+.board {
+    float: left;
+    width: 330px;
+    height: 330px;
+    margin-left: 10px;
+}
+
+.stats {
+    margin-left: 10px;
+}
+
+.chat {
+    float: left;
+    width: 368px;
+}
+
+.messages {
+    overflow: auto;
+    height: 288px;
+}
+
+.messages ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.input input {
+    width: 100%;
+    border: 1px solid #b3b3b3;
+}
+
+.input input:focus {
+    outline: none;
+}
+
+.messages p {
+    margin: 0;
+}
+
+.stats span {
+    font-weight: bold;
+}
+
+.stats p {
+    font-style: italic;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+
+.stats p:before {
+    content: '> ';
+}
+
+.in {
+    border: 1px solid #eee;
+    width: 60%;
+    padding: 3px;
+    border-radius: 5px 5px 5px 0;
+    margin-bottom: 3px;
+    background-color: #eee;
+}
+
+.out {
+    border: 1px solid #ddd;
+    margin-left: 40%;
+    padding: 3px;
+    border-radius: 5px 5px 0 5px;
+    text-align: right;
+    margin-bottom: 3px;
+    background-color: #ddd;
+}
+
+.ad {
+    margin-left: -17px;
+}
+
+@media only screen and (max-device-width: 700px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .main {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+    }
+
+    .board {
+        float: none;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .chat {
+        float: none;
+        margin: 0 auto;
+        width: 310px;
+        padding-bottom: 10px;
+        padding-left: 0;
+    }
+
+    .messages {
+        height: 180px;
+    }
+
+    .stats {
+        margin-left: -10px;
+    }
+
+    .stats p {
+        margin-top: 0;
+    }
+
+    .badge {
+        display: none;
+    }
+
+}
