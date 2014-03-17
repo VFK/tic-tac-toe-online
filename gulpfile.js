@@ -1,9 +1,10 @@
 var gulp = require('gulp');
-var browserify = require('gulp-browserify');
+var source = require('vinyl-source-stream');
+var browserify = require('browserify');
+var streamify = require('gulp-streamify');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
-var rename = require("gulp-rename");
 var htmlreplace = require('gulp-html-replace');
 var uglify = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
@@ -21,9 +22,8 @@ gulp.task('clean', function (cb) {
 
 gulp.task('dev', ['clean'], function () {
 
-    gulp.src('client/js/index.js')
-        .pipe(browserify({debug: true}))
-        .pipe(rename('bundle.js'))
+    browserify('./client/js/index.js').bundle({debug: true})
+        .pipe(source('bundle.js'))
         .pipe(gulp.dest('build'));
 
     gulp.src('client/css/*.css')
@@ -39,14 +39,13 @@ gulp.task('dev', ['clean'], function () {
 
 gulp.task('prod', ['clean'], function () {
 
-    gulp.src('client/js/index.js')
-        .pipe(browserify({debug: false}))
-        .pipe(uglify({
+    browserify('./client/js/index.js').bundle()
+        .pipe(source('bundle.min.js'))
+        .pipe(streamify(uglify({
             compress: {
                 unsafe: true
             }
-        }))
-        .pipe(rename('bundle.min.js'))
+        })))
         .pipe(gulp.dest('build'));
 
     gulp.src(['client/css/normalize.css', 'client/css/main.css'])
