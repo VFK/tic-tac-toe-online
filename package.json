@@ -6,6 +6,10 @@
         "name": "Vladimir Kucherenko",
         "email": "kvsoftware@gmail.com"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/VFK/tic-tac-toe-online.git"
+    },
     "main": "./server/index.js",
     "scripts": {
         "test": "mocha --reporter spec"
