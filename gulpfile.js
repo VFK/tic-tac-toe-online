@@ -61,14 +61,8 @@ gulp.task('prod', ['clean'], function () {
         .pipe(htmlreplace({
             css: 'style.min.css',
             js: 'bundle.min.js',
-            analytics: {
-                files: fs.readFileSync(__dirname + '/client/inc/analytics'),
-                tpl: '%s'
-            },
-            adsense: {
-                files: fs.readFileSync(__dirname + '/client/inc/adsense'),
-                tpl: '%s'
-            }
+            analytics: fs.readFileSync(__dirname + '/client/inc/analytics', {encoding: 'utf8'}),
+            adsense: fs.readFileSync(__dirname + '/client/inc/adsense', {encoding: 'utf8'})
         }))
         .pipe(htmlmin({
             removeComments: true,
